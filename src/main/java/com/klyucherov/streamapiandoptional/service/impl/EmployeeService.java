@@ -14,21 +14,20 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeeService {
       private Map<String, Employee> employeeMap = new HashMap<>();
+      private final ValidationService validationService;
 
-     EmployeeService() {
-     //   this.employeeMap = Map.of(FRONTEND,new Employee ("Ivan", FRONTEND, 200000)
-             //   , BACKEND, new Employee ("Andrey", BACKEND, 1000000)
-             //   , TESTERS, new Employee("Valera", TESTERS, 350000)
-             //   , FRONTEND, new Employee("Alerksey", FRONTEND, 250000)
-             //   , BACKEND, new Employee("Stasya", BACKEND , 2000000)
-             //   , TESTERS, new Employee("Angela", TESTERS , 300000));
-        employeeMap.put("FRONTEND",new Employee ("Ivan", 3, 200000));
-        employeeMap.put("BACKEND", new Employee ("Andrey",1, 1000000));
-        employeeMap.put("TESTERS", new Employee("Valera", 2, 350000));
-        employeeMap.put("FRONTEND", new Employee("Alerksey", 3, 250000));
-        employeeMap.put("BACKEND", new Employee("Stasya", 1 , 2000000));
-        employeeMap.put("TESTERS", new Employee("Angela", 2 , 300000));
+     EmployeeService(ValidationService validationService) {
+         this.validationService = validationService;
+
+         employeeMap.put("FRONTEND",new Employee ("Ivan","ivanov", 3, 200000));
+        employeeMap.put("BACKEND", new Employee ("Andrey","andreev",1, 1000000));
+        employeeMap.put("TESTERS", new Employee("Valera","valerev", 2, 350000));
+        employeeMap.put("FRONTEND", new Employee("Alerksey","Alekseev", 3, 250000));
+        employeeMap.put("BACKEND", new Employee("Stasya","Michaylova", 1 , 2000000));
+        employeeMap.put("TESTERS", new Employee("Angela","Lyubimova", 2 , 300000));
     }
+
+
 
 
 
